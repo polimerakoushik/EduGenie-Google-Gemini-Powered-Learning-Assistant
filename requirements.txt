@@ -1,2 +1,9 @@
 Flask
 python-dotenv
+google-genai
+PyPDF2
+python-docx
+python-pptx
+Pillow
+requests
+waitress

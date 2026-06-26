@@ -3,14 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EduGenie</title>
+  <title>EduGenie — Learning Assistant</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div id="app">
-    <h1>Welcome to EduGenie</h1>
-    <p>Google Gemini powered learning assistant starter.</p>
+  <div class="chat-app">
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">🧠</span>
+          <h1>EduGenie</h1>
+        </div>
+        <p class="tagline">Your AI-Powered Learning Assistant</p>
+      </div>
+    </header>
+
+    <!-- Main Chat Container -->
+    <main class="chat-main">
+      <!-- Sidebar - Conversation History -->
+      <aside class="chat-sidebar">
+        <div class="sidebar-header">
+          <h3>💬 Conversations</h3>
+          <button id="new-chat-btn" class="new-chat-btn" title="Start new conversation">➕</button>
+        </div>
+        <div id="history-list" class="history-list">
+          <!-- Conversation history will be populated here -->
+        </div>
+      </aside>
+
+      <div class="chat-container">
+        <!-- Messages Area -->
+        <div id="messages" class="messages-area">
+          <div class="message assistant-message">
+            <div class="message-avatar">🧠</div>
+            <div class="message-content">
+              <p>Hello! I'm EduGenie, your learning assistant.</p>
+              <p>Ask me anything about your studies—I'll help you understand complex topics with clear explanations, step-by-step guides, real-world examples, and resources for deeper learning.</p>
+              <p><strong>Try asking me about:</strong> Math, Science, History, Languages, Programming, or any subject you're studying!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <footer class="chat-footer">
+          <form id="chat-form" class="input-form">
+            <div class="input-wrapper">
+              <textarea 
+                id="message" 
+                class="message-input"
+                placeholder="Ask me anything about your learning... (Shift+Enter for new line)"
+                rows="1"
+              ></textarea>
+              <button type="submit" class="send-button" title="Send (Enter or Shift+Click)">
+                <span>Send</span>
+                <span class="send-icon">➤</span>
+              </button>
+            </div>
+            <div class="input-hints">
+              <small>💡 Tip: I'll remember our conversation context for better answers</small>
+            </div>
+          </form>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+            <button id="clear-btn" class="action-btn secondary">
+              <span class="btn-icon">🗑️</span> Clear Chat
+            </button>
+            <button id="info-btn" class="action-btn secondary">
+              <span class="btn-icon">ℹ️</span> How I Work
+            </button>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- Info Modal -->
+    <dialog id="info-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2>About EduGenie</h2>
+        <div class="modal-body">
+          <h3>🎯 Features</h3>
+          <ul>
+            <li>✅ Clear, student-friendly explanations</li>
+            <li>✅ Step-by-step breakdowns of complex topics</li>
+            <li>✅ Real-world examples and analogies</li>
+            <li>✅ Conversation memory for better context</li>
+            <li>✅ Personalized learning suggestions</li>
+          </ul>
+
+          <h3>🚀 How to Use</h3>
+          <ol>
+            <li>Ask any question related to your studies</li>
+            <li>I'll provide a comprehensive response</li>
+            <li>Ask follow-up questions—I remember our conversation!</li>
+            <li>Use "Clear Chat" to start a new conversation</li>
+          </ol>
+
+          <h3>💡 Tips for Best Results</h3>
+          <ul>
+            <li>Be specific with your questions</li>
+            <li>Include context if you're asking about a specific topic</li>
+            <li>Ask follow-up questions to dive deeper</li>
+            <li>Request explanations, examples, or practice problems</li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
   </div>
+
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
