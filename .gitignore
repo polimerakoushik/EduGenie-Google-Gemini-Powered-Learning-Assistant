@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Env files
+.env
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Images (if you want to keep large assets out of git)
+# images/
