@@ -10,7 +10,7 @@ load_dotenv()
 API_KEY = os.getenv('GEMINI_API_KEY')
 
 if not API_KEY:
-    print("❌ GEMINI_API_KEY not found in .env")
+    print(" GEMINI_API_KEY not found in .env")
     exit(1)
 
 print(f"✓ API Key loaded: {API_KEY[:20]}...")
@@ -27,7 +27,7 @@ models_to_test = [
 test_prompt = "Hello, respond with 'OK' if you can hear me."
 
 for model_name, endpoint in models_to_test:
-    print(f"\n🧪 Testing {model_name} at {endpoint}...")
+    print(f"\n Testing {model_name} at {endpoint}...")
     url = f"https://generativelanguage.googleapis.com/{endpoint}?key={API_KEY}"
     
     # Use generateContent format for all
@@ -44,6 +44,6 @@ for model_name, endpoint in models_to_test:
             print(f"   ✓ Success! Response: {str(data)[:100]}...")
             break
         else:
-            print(f"   ✗ Error: {resp.text[:200]}")
+            print(f"    Error: {resp.text[:200]}")
     except Exception as e:
-        print(f"   ✗ Exception: {str(e)[:100]}")
+        print(f"   Exception: {str(e)[:100]}")
